@@ -85,7 +85,7 @@ function game() {
 // playRound(playerSelection, computerSelection);
 
 let winner = game();
-if (winner == "Its been a tie play again.") {
+if (winner == "ITS BEEN A TIE. PLAY AGAIN") {
     console.log(winner);
     let playAgain = prompt("Ohh! Its been a tie! Do you want to play again? (Yes/No)");
     if (playAgain) {
