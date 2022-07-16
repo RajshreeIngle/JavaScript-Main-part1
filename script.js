@@ -1,25 +1,28 @@
 function computerPlay() {
     let array = ['rock', 'paper', 'scissor'];
     let computerChoice = "";
-    let selectNumber = Math.floor(Math.random()*3);
+    let selectNumber = Math.floor(Math.random() * 3);
     computerChoice = array[selectNumber];
     return computerChoice;
 }
 
 function playerChoice() {
     let playerSelection = prompt("Select Your choice : Rock, Paper, or Scissor");
-    //playerSelection = playerSelection.toLowerCase();
     //console.log("player selection : " + playerSelection);
     while (!playerSelection) {
+        console.log("Nothing selected.... Please Select Your choice");
         alert("Nothing selected.... Please Select Your choice");
         playerSelection = prompt("Please Select Your choice : Rock, Paper, or Scissor");
     }
     playerSelection = playerSelection.toLowerCase();
     if ((playerSelection == "rock") || (playerSelection == "scissor") || (playerSelection == "paper")) {
+        //console.log("in if");
         return playerSelection;
     } else {
         alert("please enter valid selection between rock, paper, scissor");
-        playerSelection = prompt("please enter valid selection between rock, paper, scissor : ");
+        console.log("please enter valid selection between rock, paper, scissor");
+        playerSelection = playerChoice();
+        // playerSelection = prompt("please enter valid selection between rock, paper, scissor : ");
         return playerSelection;
     }
 }
@@ -62,7 +65,7 @@ function game() {
         } else if (string == "Win") {
             playerWinCount++;
             console.log(`Player win count ${playerWinCount}, Computer win count ${computerWinCount}, Tie count ${tieCount}`);
-        }else {
+        } else {
             computerWinCount++;
             console.log(`Player win count ${playerWinCount}, Computer win count ${computerWinCount}, Cie count ${tieCount}`);
         }
@@ -93,7 +96,7 @@ if (winner == "Its been a tie play again.") {
         } else {
             console.log("Visit again!");
         }
-    }else{
+    } else {
         console.log("Game Over!");
     }
 } else {
